@@ -4,7 +4,33 @@ import StarIcon from '../../Assets/star_icon.png'
 import StarDullIcon from '../../Assets/star_dull_icon.png'
 const DisplayProduct = (props) => {
   const {Product} = props;
-  const {all_product} = useContext(ShopContext)
+  const {all_product} = useContext(ShopContext);
+  const list = [
+    {
+      id: 1,
+      name: 'S'
+    },
+    {
+      id: 2,
+      name: 'M'
+    },
+    {
+      id: 3,
+      name: 'L'
+    },
+    {
+      id: 4,
+      name: 'X'
+    },
+    {
+      id: 5,
+      name: 'XL'
+    },
+    {
+      id: 6,
+      name: 'XXL'
+    },
+  ]
   return (
     <section className="bg-slate-100 pt-5 pb-5">
       <div className="max-w-screen-xl mx-auto px-3">
@@ -81,11 +107,11 @@ const DisplayProduct = (props) => {
                   id="countries"
                   className="bg-gray-400 capitalize h-7 rounded w-52 px-2 font-bold border-none outline-none"
                 >
-                  <option className="capitalize" value="a">s</option>
-                  <option className="capitalize" value="m">m</option>
-                  <option className="capitalize" value="l">l</option>
-                  <option className="capitalize" value="xl">xl</option>
-                  <option className="capitalize" value="xxl">xxl</option>
+                  {list.map(list => {
+                    return (
+                      <option className="capitalize" key={list.id} value={list.name}>{list.name}</option>
+                    )
+                  })}
                 </select>
               </form>
             </div>
@@ -96,16 +122,12 @@ const DisplayProduct = (props) => {
               <p className="mb-1 text-md"><span className="font-bold">Category:</span> {Product.category}.T-Shirt, Crop Top </p>
               <p className="mb-1 text-md"><span className="font-bold">Tages:</span> Modern Latest</p>
              </div>
-          </div>
-          
-          
+          </div>          
           </div>
         </div>
       </div>
     </section>
   );
 };
-
-// https://www.youtube.com/watch?v=jbfuzcrfjqQ
 
 export default DisplayProduct;

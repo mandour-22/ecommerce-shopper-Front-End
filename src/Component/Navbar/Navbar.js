@@ -12,7 +12,7 @@ const Navbar = ({ imgIcon, imgIconCart }) => {
             <img src={imgIcon} className="w-12" alt="logo" />
             <h2 className="uppercase font-semibold text-3xl">Shopping</h2>
           </div>
-          <ul className=" items-center gap-5 hidden">
+          <ul className="flex items-center gap-5">
             <li
               className="cursor-pointer text-lg font-normal select-none"
               onClick={() => setBorder("shop")}>
@@ -26,7 +26,7 @@ const Navbar = ({ imgIcon, imgIconCart }) => {
             <li
               className="cursor-pointer text-lg font-normal select-none"
               onClick={() => setBorder("men")}>
-              <Link to="/mens">Men</Link>
+              <Link to="/men">Men</Link>
               {border === "men" ? (
                 <hr className="w-2/3 mx-auto h-1 bg-red-500" />
               ) : (
@@ -46,7 +46,7 @@ const Navbar = ({ imgIcon, imgIconCart }) => {
             <li
               className="cursor-pointer text-lg font-normal select-none"
               onClick={() => setBorder("kids")}>
-              <Link to="/kids">Kids</Link>
+              <Link to="/kid">Kids</Link>
               {border === "kids" ? (
                 <hr className="w-2/3 mx-auto h-1 bg-red-500" />
               ) : (
