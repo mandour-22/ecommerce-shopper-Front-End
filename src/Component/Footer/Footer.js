@@ -36,7 +36,7 @@ const Footer = () => {
             <img src={footerLogo} className="w-12" alt="logo" />
             <h2 className="uppercase font-semibold text-3xl">Shopping</h2>
           </div>
-          <ul className="flex flex-wrap items-center gap-12 mt-10 mb-10">
+          <ul className="flex flex-wrap items-center justify-center gap-12 max-md:gap-5 mt-10 mb-10">
             {listItems.map((items, index) => (
               <li key={index}>
                 <Link to={"#"} className="font-sans font-normal text-lg">

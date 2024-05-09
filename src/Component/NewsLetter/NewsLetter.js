@@ -11,15 +11,13 @@ const NewsLetter = () => {
           <h6 className="capitalize text-xl font-medium mb-6">
             subscribe to our newLetter and stay updated
           </h6>
-          <div className="relative">
+          <div className="flex items-center gap-4 justify-center max-sm:flex-col">
             <input
               type="email"
               placeholder="Your email id"
-              className="border-gray-500 bg-primary outline-none border-2 w-1/3 rounded-full pt-4 pb-3 px-4"
+              className="border-gray-500 max-sm:w-full bg-primary outline-none border-2 w-1/3 rounded-md pt-2 pb-2 px-4"
             />
-            <button
-              className="absolute bg-black pb-5 pt-4 px-6 rounded-full text-sm text-white"
-              style={{ right: "28%" }}>
+            <button className="bg-red-500 max-sm:w-full rounded-md font-normal text-lg pb-2 pt-2 px-6 text-white">
               Subscribe
             </button>
           </div>

@@ -3,5 +3,6 @@
 @tailwind utilities;
 
 * {
-  font-family: "Ubuntu Sans Mono", monospace;
+  font-family: "Cairo", sans-serif;
+  scroll-behavior: smooth;
 }

@@ -4,7 +4,7 @@ import Items from "../Item/Items";
 
 const NewCollections = () => {
   return (
-    <section className="bg-white pt-12 pb-12">
+    <section className="bg-white pt-12 pb-12" id="collection">
       <div className="container mx-auto">
         <h1 className="text-center mb-2 uppercase font-bold text-4xl font-sans">
           new collections
