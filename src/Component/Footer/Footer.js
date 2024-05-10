@@ -33,7 +33,7 @@ const Footer = () => {
       <div className="max-w-screen-xl mx-auto px-4">
         <div className="flex flex-col items-center justify-center">
           <div className="flex items-center gap-2 justify-center">
-            <img src={footerLogo} className="w-12" alt="logo" />
+            <img src={footerLogo} loading="lazy" className="w-12" alt="logo" />
             <h2 className="uppercase font-semibold text-3xl">Shopping</h2>
           </div>
           <ul className="flex flex-wrap items-center justify-center gap-12 max-md:gap-5 mt-10 mb-10">

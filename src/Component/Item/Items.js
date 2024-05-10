@@ -1,14 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const 
-Items = (props) => {
-  
+const Items = (props) => {
   return (
     <>
       <div className="shadow-md bg-slate-100 max-sm:w-10/12 max-sm:mx-auto">
-        <Link to={`/product/${props.id}`}>
-          <img src={props.image} alt="" className="mx-auto" />
+        <Link
+          to={`/product/${props.id}`}
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          }}>
+          <img src={props.image} loading="lazy" alt="" className="mx-auto" />
         </Link>
         <h1 className="leading-7 px-3 mb-4 text-gray-900 font-semibold text-lg mt-4">
           {props.name}

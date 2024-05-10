@@ -16,7 +16,7 @@ const Offers = () => {
           </button>
         </div>
         <div className="max-sm:hidden">
-          <img src={exclusive_Img} alt="exclusive" />
+          <img src={exclusive_Img} loading="lazy" alt="exclusive" />
         </div>
       </div>
     </section>

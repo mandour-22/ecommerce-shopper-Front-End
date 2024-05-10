@@ -7,7 +7,7 @@ import "./Hero.css";
 
 const Hero = () => {
   return (
-    <section className="flex items-center bg-slate-200">
+    <header className="flex items-center bg-slate-200">
       <div className="container gap-10 mx-auto pt-8 pb-8">
         <div className="flex max-md:flex-col items-center justify-between px-10">
           <div className="font-bold max-md:w-full h-full flex flex-col justify-center ">
@@ -15,7 +15,12 @@ const Hero = () => {
             <div className="leading-tight mb-5">
               <div className="flex items-center gap-3">
                 <p className="hero-text font-sans text-5xl  md:text-6xl">new</p>
-                <img className="w-28 max-md:w-16" src={hand_Icon} alt="hand" />
+                <img
+                  loading="lazy"
+                  className="w-28 max-md:w-16"
+                  src={hand_Icon}
+                  alt="hand"
+                />
               </div>
               <p className="hero-text font-sans text-5xl md:text-6xl">
                 Collections
@@ -30,11 +35,11 @@ const Hero = () => {
             </div>
           </div>
           <div className="flex max-md:hidden justify-center items-center ">
-            <img className="heroImg" src={hero} alt="Photo" />
+            <img loading="lazy" className="heroImg" src={hero} alt="Photo" />
           </div>
         </div>
       </div>
-    </section>
+    </header>
   );
 };
 

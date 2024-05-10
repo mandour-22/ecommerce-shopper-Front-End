@@ -9,17 +9,24 @@ const ShopCategory = (props) => {
 
   return (
     <section className="">
+      <img
+        loading="lazy"
+        className="max-sm:w-full sm:max-w-screen-xl sm:mx-auto"
+        src={props.banner}
+        alt=""
+      />
       <div className="max-w-screen-xl mx-auto px-4">
-        <img src={props.banner} alt="" />
         <div className=" mt-5">
           <div className="flex justify-between items-center capitalize mt-4 px-3">
             <p className="text-sm font-semibold text-gray-700">
-              <span className="text-gray-800 text-lg">showing 1-12</span> out of
-              36 product
+              <span className="text-gray-800 max-sm:text-sm text-lg">
+                showing 1-12
+              </span>{" "}
+              out of 36 product
             </p>
-            <div className="flex gap-3 items-center bg-gray-200 border border-gray-400 pt-2 pb-2 px-4 rounded-full cursor-pointer font-medium">
+            <div className="flex gap-2 items-center bg-gray-200 border border-gray-400 pt-2 pb-2 max-sm:pt-1 max-sm:pb-1 max-sm:text-sm max-sm:px-2 px-4 rounded-full cursor-pointer font-medium">
               <p>Sort by</p>
-              <FontAwesomeIcon icon={faAngleDown} />
+              <FontAwesomeIcon icon={faAngleDown} className="max-sm:text-sm" />
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-14 pb-14">

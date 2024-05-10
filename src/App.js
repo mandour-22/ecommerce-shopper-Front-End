@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -9,7 +9,6 @@ import Icon from "./Assets/logo.png";
 import ShopCategory from "./Pages/ShopCategory";
 import Product from "./Pages/Product";
 import Cart from "./Pages/Cart";
-import LoginSignUp from "./Pages/LoginSignUp";
 import HomeShop from "./Pages/HomeShop";
 import Shopping from "./Pages/Shopping";
 import Favicon from "react-favicon";
@@ -37,7 +36,6 @@ const router = createBrowserRouter(
         <Route path=":productId" element={<Product />} />
       </Route>
       <Route path="/cart" element={<Cart />} />
-      <Route path="/login" element={<LoginSignUp />} />
       {/* ... etc. */}
     </Route>
   )
@@ -47,9 +45,7 @@ const App = () => {
   return (
     <>
       <Favicon url={Icon} />
-      {/* <Navbar imgIcon={Icon} imgIconCart={cartIcon} /> */}
       <RouterProvider router={router} />
-      {/* <Footer /> */}
     </>
   );
 };

@@ -10,11 +10,11 @@ const RelatedProducts = () => {
       </h1>
       <hr className="bg-black h-1 w-24 mx-auto" />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-14 pb-14">
-        {items_product.map((items) => {
+        {items_product.map((items, i) => {
           return (
             <>
               <Items
-                key={items.id}
+                key={i}
                 id={items.id}
                 name={items.name}
                 image={items.image}

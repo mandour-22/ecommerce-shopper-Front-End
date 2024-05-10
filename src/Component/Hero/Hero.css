@@ -16,3 +16,9 @@
     width: 430px;
   }
 }
+@media (max-width: 400px) {
+  .hero-text {
+    font-size: 50px;
+    text-transform: capitalize;
+  }
+}

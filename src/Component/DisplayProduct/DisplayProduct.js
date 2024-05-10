@@ -4,7 +4,8 @@ import StarIcon from "../../Assets/star_icon.png";
 import StarDullIcon from "../../Assets/star_dull_icon.png";
 const DisplayProduct = (props) => {
   const { Product } = props;
-  const { all_product } = useContext(ShopContext);
+  const { addToCart } = useContext(ShopContext);
+
   const list = [
     {
       id: 1,
@@ -39,36 +40,41 @@ const DisplayProduct = (props) => {
             <div className=" flex flex-col gap-2 ">
               <img
                 src={Product.image}
+                loading="lazy"
                 alt="prodcut Img"
                 className="w-16 border-2 border-slate-500 object-fill"
               />
               <img
                 src={Product.image}
+                loading="lazy"
                 alt="prodcut Img"
                 className="w-16 border-2 border-slate-500 object-fill"
               />
               <img
                 src={Product.image}
+                loading="lazy"
                 alt="prodcut Img"
                 className="w-16 border-2 border-slate-500 object-fill"
               />
               <img
                 src={Product.image}
+                loading="lazy"
                 alt="prodcut Img"
                 className="w-16 border-2 border-slate-500 object-fill"
               />
               <img
                 src={Product.image}
+                loading="lazy"
                 alt="prodcut Img"
                 className="w-16 border-2 border-slate-500 object-fill"
               />
             </div>
             <div>
-              <img src={Product.image} alt="product img" />
+              <img src={Product.image} loading="lazy" alt="product img" />
             </div>
           </div>
           <div className="lg:flex-1 w-full">
-            <h1 className="text-3xl font-semibold w-3/4 text-gray-900">
+            <h1 className="text-3xl font-semibold w-3/4 max-lg:w-full text-gray-900">
               {Product.name}
             </h1>
             <div className="flex items-center gap-3 mt-2">
@@ -91,7 +97,7 @@ const DisplayProduct = (props) => {
               </p>
             </div>
             <div className="mt-5">
-              <p className="font-medium text-sm w-3/4 leading-6 text-gray-800">
+              <p className="font-medium text-sm w-3/4 max-sm:w-full leading-6 text-gray-800">
                 A lightweight usually knitted, pullover close-fitting and with
                 around neckdine and start sleeves worn as an undershirt or outer
                 garment
@@ -120,7 +126,11 @@ const DisplayProduct = (props) => {
                 </select>
               </form>
             </div>
-            <button className="uppercase bg-red-500 text-white rounded-md mt-4 font-bold px-8 pt-2 pb-2">
+            <button
+              className="uppercase bg-red-500 text-white rounded-md mt-4 font-bold px-8 pt-2 pb-2"
+              onClick={() => {
+                addToCart(Product.id);
+              }}>
               Add To Chart
             </button>
 
