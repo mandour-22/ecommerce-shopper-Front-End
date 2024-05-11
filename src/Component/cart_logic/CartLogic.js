@@ -8,50 +8,102 @@ const CartLogic = () => {
     useContext(ShopContext);
   return (
     <div className="">
-      <div className="overflow-x-auto w-full pt-12 pb-12">
-        <div className="grid grid-cols-6 gap-16 pb-2">
-          <p className="text-center font-bold">product</p>
-          <p className="text-center font-bold">Title</p>
-          <p className="text-center font-bold">Price</p>
-          <p className="text-center font-bold">Quantity</p>
-          <p className="text-center font-bold">Total</p>
-          <p className="text-center font-bold">Remove</p>
+      <div className="line-line overflow-x-auto w-full pt-12 pb-12">
+        <div
+          className="grid grid-cols-6 gap-2 pb-2 mx-auto"
+          style={{ width: "1000px" }}>
+          {["product", "Title", "Price", "Quantity", "Total", "Remove"].map(
+            (data) => (
+              <table>
+                <thead>
+                  <tr>
+                    <th className="text-center text-sm">{data}</th>
+                  </tr>
+                </thead>
+              </table>
+            )
+          )}
         </div>
         <hr className="bg-gray-700" style={{ height: "2px" }} />
-        <div className="flex items-start w-full flex-col justify-between">
+        <div className="line-line flex items-start w-full flex-col justify-between min-h-96">
           {all_product.map((prod) => {
             if (cart[prod.id] > 0) {
               return (
-                <div
-                  key={prod.id}
-                  className="w-full mb-4 mt-6 border-b border-gray-300 p-2">
-                  <div className="grid grid-cols-6 gap-16 items-center">
-                    <img
-                      className="w-16"
-                      loading="lazy"
-                      src={prod.image}
-                      alt=""
-                    />
-                    <p className="text-center text-sm font-semibold">
-                      {prod.name}
-                    </p>
-                    <p className="text-center">${prod.new_price}</p>
-                    <button>{cart[prod.id]}</button>
-                    <p className="text-center">
-                      ${prod.new_price * cart[prod.id]}
-                    </p>
-                    <button
-                      onClick={() => removeFromCart(prod.id)}
-                      className="w-12 h-7 mx-auto">
-                      <span className="hover:bg-red-500 rounded-md text-black hover:text-white focus:text-white font-normal focus:bg-red-500 bg-gray-300 block  mx-auto text-center">
-                        <FontAwesomeIcon icon={faXmark} />
-                      </span>
-                    </button>
+                <>
+                  <div
+                    key={prod.id}
+                    className="max-w-screen-xl mx-auto overflow-x-auto mb-4 mt-6 border-b border-gray-300 p-2">
+                    <div
+                      className="grid grid-cols-6 items-center mx-auto"
+                      style={{ width: "1000px" }}>
+                      <img
+                        className="w-16 mx-auto"
+                        loading="lazy"
+                        src={prod.image}
+                        alt=""
+                      />
+                      <p className="text-center col-span-1 text-sm font-semibold">
+                        {prod.name}
+                      </p>
+                      <p className="text-center">${prod.new_price}</p>
+                      <button>{cart[prod.id]}</button>
+                      <p className="text-center">
+                        ${prod.new_price * cart[prod.id]}
+                      </p>
+                      <button
+                        onClick={() => removeFromCart(prod.id)}
+                        className="w-12 h-7 mx-auto">
+                        <span className="hover:bg-red-500 rounded-md text-black hover:text-white focus:text-white font-normal focus:bg-red-500 bg-gray-300 block  mx-auto text-center">
+                          <FontAwesomeIcon icon={faXmark} />
+                        </span>
+                      </button>
+                    </div>
                   </div>
-                </div>
+                </>
+                // <table
+                //   key={prod.id}
+                //   className="w-full mb-4 mt-6 border-b border-gray-300 p-2">
+                //   <tbody className="grid grid-cols-">
+                //     <tr>
+                //       <td>
+                //         <img
+                //           className="w-16"
+                //           loading="lazy"
+                //           src={prod.image}
+                //           alt=""
+                //         />
+                //       </td>
+                //       <td colSpan={"1"}>
+                //         <p className="text-center col-span-1 text-sm font-semibold">
+                //           {prod.name}
+                //         </p>
+                //       </td>
+                //       <td>
+                //         <p className="text-center">${prod.new_price}</p>
+                //       </td>
+                //       <td>
+                //         <button>{cart[prod.id]}</button>
+                //       </td>
+                //       <td>
+                //         <p className="text-center">
+                //           ${prod.new_price * cart[prod.id]}
+                //         </p>
+                //       </td>
+                //       <td>
+                //         <button
+                //           onClick={() => removeFromCart(prod.id)}
+                //           className="w-12 h-7 mx-auto">
+                //           <span className="hover:bg-red-500 rounded-md text-black hover:text-white focus:text-white font-normal focus:bg-red-500 bg-gray-300 block  mx-auto text-center">
+                //             <FontAwesomeIcon icon={faXmark} />
+                //           </span>
+                //         </button>
+                //       </td>
+                //     </tr>
+                //   </tbody>
+                // </table>
               );
             } else {
-              return <div style={{ height: "15px" }}></div>;
+              return null;
             }
           })}
         </div>
