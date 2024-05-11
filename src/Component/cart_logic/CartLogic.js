@@ -14,7 +14,7 @@ const CartLogic = () => {
           style={{ width: "1000px" }}>
           {["product", "Title", "Price", "Quantity", "Total", "Remove"].map(
             (data) => (
-              <table>
+              <table key={data}>
                 <thead>
                   <tr>
                     <th className="text-center text-sm">{data}</th>

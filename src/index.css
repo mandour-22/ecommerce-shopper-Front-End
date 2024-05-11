@@ -8,12 +8,12 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: white;
+  background-color: white !important;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(239 68 68);
+  background-color: rgb(239 68 68) !important;
 }
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 4px;
+  width: 7px !important;
+  height: 4px !important;
 }
